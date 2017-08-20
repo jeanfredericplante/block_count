@@ -12,7 +12,6 @@
 		A415CAB21EEA437900983607 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415CAB11EEA437900983607 /* ViewController.swift */; };
 		A415CAB71EEA437900983607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A415CAB61EEA437900983607 /* Assets.xcassets */; };
 		A415CABA1EEA437900983607 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A415CAB81EEA437900983607 /* LaunchScreen.storyboard */; };
-		A415CACF1EEA4B0300983607 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A415CACE1EEA4AF300983607 /* Inceptionv3.mlmodel */; };
 		A415CAD61EEA4C0800983607 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415CAD31EEA4BA100983607 /* VideoCapture.swift */; };
 		A415CAD71EEA4C0D00983607 /* VideoCameraType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415CAD21EEA4BA100983607 /* VideoCameraType.swift */; };
 		A415CAD81EEA4C1000983607 /* AVCaptureDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415CAD11EEA4BA100983607 /* AVCaptureDevice+Extension.swift */; };
@@ -27,7 +26,6 @@
 		A415CAB61EEA437900983607 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A415CAB91EEA437900983607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A415CABB1EEA437900983607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A415CACE1EEA4AF300983607 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		A415CAD11EEA4BA100983607 /* AVCaptureDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Extension.swift"; sourceTree = "<group>"; };
 		A415CAD21EEA4BA100983607 /* VideoCameraType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCameraType.swift; sourceTree = "<group>"; };
 		A415CAD31EEA4BA100983607 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				9511ABDF1F493EDB00D52F42 /* vgg.mlmodel */,
-				A415CACE1EEA4AF300983607 /* Inceptionv3.mlmodel */,
 				A415CAD01EEA4BA100983607 /* VideoCapture */,
 				A415CAAF1EEA437900983607 /* AppDelegate.swift */,
 				A415CAB11EEA437900983607 /* ViewController.swift */,
@@ -162,7 +159,6 @@
 				A415CAD61EEA4C0800983607 /* VideoCapture.swift in Sources */,
 				A415CAB21EEA437900983607 /* ViewController.swift in Sources */,
 				9511ABE01F493EE800D52F42 /* vgg.mlmodel in Sources */,
-				A415CACF1EEA4B0300983607 /* Inceptionv3.mlmodel in Sources */,
 				A415CAD71EEA4C0D00983607 /* VideoCameraType.swift in Sources */,
 				A415CAB01EEA437900983607 /* AppDelegate.swift in Sources */,
 				A415CAD81EEA4C1000983607 /* AVCaptureDevice+Extension.swift in Sources */,

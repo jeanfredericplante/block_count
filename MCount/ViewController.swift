@@ -19,7 +19,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
     
     // some properties used to control the app and store appropriate values
     
-    let inceptionv3model = vgg()
+    let vgg_model = vgg()
     private var videoCapture: VideoCapture!
     private var requests = [VNRequest]()
     
@@ -80,7 +80,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
     }
     
     func setupVision() {
-        guard let visionModel = try? VNCoreMLModel(for: inceptionv3model.model) else {
+        guard let visionModel = try? VNCoreMLModel(for: vgg_model.model) else {
             fatalError("can't load Vision ML model")
         }
         let classificationRequest = VNCoreMLRequest(model: visionModel) { (request: VNRequest, error: Error?) in

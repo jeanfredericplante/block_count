@@ -13,20 +13,20 @@ import Vision
 class ViewController: UIViewController, UIImagePickerControllerDelegate {
     
     // Outlets to label and view
-    @IBOutlet private weak var predictLabel: UILabel!
-    @IBOutlet private weak var previewView: UIView!
-    @IBOutlet private weak var visionSwitch: UISwitch!
+    @IBOutlet weak var predictLabel: UILabel!
+    @IBOutlet weak var previewView: UIView!
+    @IBOutlet weak var visionSwitch: UISwitch!
     
     // some properties used to control the app and store appropriate values
     
-    let vgg_model = vgg()
+    let vgg_model = vgg_image()
     private var videoCapture: VideoCapture!
     private var requests = [VNRequest]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupVision()
-        let spec = VideoSpec(fps: 5, size: CGSize(width: 299, height: 299))
+        let spec = VideoSpec(fps: 5, size: CGSize(width: 224, height: 224))
         videoCapture = VideoCapture(cameraType: .back,
                                     preferredSpec: spec,
                                     previewContainer: previewView.layer)
@@ -48,11 +48,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
             return
         }
         do {
-            let prediction = try self.inceptionv3model.prediction(image: self.resize(pixelBuffer: pixelBuffer)!)
+            let prediction = try self.vgg_model.prediction(image: self.resize(pixelBuffer: pixelBuffer)!)
             DispatchQueue.main.async {
-                if let prob = prediction.classLabelProbs[prediction.classLabel] {
-                    self.predictLabel.text = "\(prediction.classLabel) \(String(describing: prob))"
-                }
+                self.predictLabel.text = "\(prediction.classLabel)"
             }
         }
         catch let error as NSError {
@@ -84,17 +82,30 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
             fatalError("can't load Vision ML model")
         }
         let classificationRequest = VNCoreMLRequest(model: visionModel) { (request: VNRequest, error: Error?) in
-            guard let observations = request.results else {
+            guard let observations = request.results, let topResult = observations.first as? VNClassificationObservation else {
                 print("no results:\(error!)")
                 return
             }
+            var blockIdentified = "none"
+            switch topResult.identifier {
+            case "ten":
+                if topResult.confidence > 0.9 {
+                    blockIdentified = "ten"
+                }
+            case "one":
+                if topResult.confidence > 0.99 {
+                    blockIdentified = "one"
+                }
+            default:
+                break
+            }
             
-            let classifications = observations[0...4]
-                .flatMap({ $0 as? VNClassificationObservation })
-                .filter({ $0.confidence > 0.2 })
-                .map({ "\($0.identifier) \($0.confidence)" })
+//            let classifications = observations[0...1]
+//                .flatMap({ $0 as? VNClassificationObservation })
+//                .filter({ $0.confidence > 0.2 })
+//                .map({ "\($0.identifier) \($0.confidence)" })
             DispatchQueue.main.async {
-                self.predictLabel.text = classifications.joined(separator: "\n")
+                self.predictLabel.text = blockIdentified
             }
         }
         classificationRequest.imageCropAndScaleOption = VNImageCropAndScaleOption.centerCrop
@@ -135,7 +146,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
     /// - Parameter pixelBuffer: CVPixelBuffer by camera output
     /// - Returns: CVPixelBuffer with size (299, 299)
     func resize(pixelBuffer: CVPixelBuffer) -> CVPixelBuffer? {
-        let imageSide = 299
+        let imageSide = 224
         var ciImage = CIImage(cvPixelBuffer: pixelBuffer, options: nil)
         let transform = CGAffineTransform(scaleX: CGFloat(imageSide) / CGFloat(CVPixelBufferGetWidth(pixelBuffer)), y: CGFloat(imageSide) / CGFloat(CVPixelBufferGetHeight(pixelBuffer)))
         ciImage = ciImage.transformed(by: transform).cropped(to: CGRect(x: 0, y: 0, width: imageSide, height: imageSide))

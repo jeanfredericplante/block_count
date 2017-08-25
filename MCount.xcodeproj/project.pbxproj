@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9511ABE01F493EE800D52F42 /* vgg.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9511ABDF1F493EDB00D52F42 /* vgg.mlmodel */; };
+		953A44AB1F4EAB8E00C7898E /* vgg_image.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 953A44AA1F4EAB8600C7898E /* vgg_image.mlmodel */; };
+		953A44AD1F4EAC2900C7898E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 953A44AC1F4EAC2900C7898E /* Default-568h@2x.png */; };
 		A415CAB01EEA437900983607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415CAAF1EEA437900983607 /* AppDelegate.swift */; };
 		A415CAB21EEA437900983607 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415CAB11EEA437900983607 /* ViewController.swift */; };
 		A415CAB71EEA437900983607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A415CAB61EEA437900983607 /* Assets.xcassets */; };
@@ -19,7 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9511ABDF1F493EDB00D52F42 /* vgg.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = vgg.mlmodel; sourceTree = SOURCE_ROOT; };
+		953A44AA1F4EAB8600C7898E /* vgg_image.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = vgg_image.mlmodel; sourceTree = SOURCE_ROOT; };
+		953A44AC1F4EAC2900C7898E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A415CAAC1EEA437900983607 /* MCount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A415CAAF1EEA437900983607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A415CAB11EEA437900983607 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 		A415CAA31EEA437900983607 = {
 			isa = PBXGroup;
 			children = (
+				953A44AC1F4EAC2900C7898E /* Default-568h@2x.png */,
 				A415CAAE1EEA437900983607 /* MCount */,
 				A415CAAD1EEA437900983607 /* Products */,
 			);
@@ -62,7 +65,7 @@
 		A415CAAE1EEA437900983607 /* MCount */ = {
 			isa = PBXGroup;
 			children = (
-				9511ABDF1F493EDB00D52F42 /* vgg.mlmodel */,
+				953A44AA1F4EAB8600C7898E /* vgg_image.mlmodel */,
 				A415CAD01EEA4BA100983607 /* VideoCapture */,
 				A415CAAF1EEA437900983607 /* AppDelegate.swift */,
 				A415CAB11EEA437900983607 /* ViewController.swift */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A415CAD91EEA4C1800983607 /* Main.storyboard in Resources */,
+				953A44AD1F4EAC2900C7898E /* Default-568h@2x.png in Resources */,
 				A415CABA1EEA437900983607 /* LaunchScreen.storyboard in Resources */,
 				A415CAB71EEA437900983607 /* Assets.xcassets in Resources */,
 			);
@@ -158,10 +162,10 @@
 			files = (
 				A415CAD61EEA4C0800983607 /* VideoCapture.swift in Sources */,
 				A415CAB21EEA437900983607 /* ViewController.swift in Sources */,
-				9511ABE01F493EE800D52F42 /* vgg.mlmodel in Sources */,
 				A415CAD71EEA4C0D00983607 /* VideoCameraType.swift in Sources */,
 				A415CAB01EEA437900983607 /* AppDelegate.swift in Sources */,
 				A415CAD81EEA4C1000983607 /* AVCaptureDevice+Extension.swift in Sources */,
+				953A44AB1F4EAB8E00C7898E /* vgg_image.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +203,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -254,6 +260,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -287,7 +295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZQEHFBD5JZ;
-				INFOPLIST_FILE = "$(SRCROOT)/CoreMLSample/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/MCount/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yulingtianxia.CoreMLSimple;
@@ -303,7 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZQEHFBD5JZ;
-				INFOPLIST_FILE = "$(SRCROOT)/CoreMLSample/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/MCount/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yulingtianxia.CoreMLSimple;

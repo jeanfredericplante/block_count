@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0Xl-yk-nao">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0Xl-yk-nao">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -16,7 +16,7 @@
         <!--View Controller-->
         <scene sceneID="71d-m2-KJ4">
             <objects>
-                <viewController id="0Xl-yk-nao" customClass="ViewController" customModule="CoreMLSample" sceneMemberID="viewController">
+                <viewController id="0Xl-yk-nao" customClass="ViewController" customModule="MCount" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cze-I2-EGa"/>
                         <viewControllerLayoutGuide type="bottom" id="Z5a-YL-kYA"/>
@@ -86,9 +86,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="predictLabel" destination="hpR-SF-YSn" id="ac2-lY-Lsw"/>
-                        <outlet property="previewView" destination="MPW-dG-rVE" id="6ZR-uF-fDC"/>
-                        <outlet property="visionSwitch" destination="qdg-1O-NKq" id="466-ph-1qm"/>
+                        <outlet property="predictLabel" destination="hpR-SF-YSn" id="cTQ-aN-UTZ"/>
+                        <outlet property="previewView" destination="MPW-dG-rVE" id="MPB-Gb-FNJ"/>
+                        <outlet property="visionSwitch" destination="qdg-1O-NKq" id="GP5-nW-dGV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8f5-Pe-2NG" userLabel="First Responder" sceneMemberID="firstResponder"/>
